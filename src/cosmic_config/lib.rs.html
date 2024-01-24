@@ -469,7 +469,7 @@
         </span><span class="kw">let </span>path = sanitize_name(name)<span class="question-mark">?</span>.join(<span class="macro">format!</span>(<span class="string">&quot;v{}&quot;</span>, version));
 
         <span class="comment">// Search data file, which provides default (e.g. /usr/share)
-        </span><span class="attr">#[cfg(any(unix))]
+        </span><span class="attr">#[cfg(unix)]
         </span><span class="kw">let </span>system_path = xdg::BaseDirectories::with_prefix(<span class="string">&quot;cosmic&quot;</span>)
             .map_err(std::io::Error::from)<span class="question-mark">?
             </span>.find_data_file(<span class="kw-2">&amp;</span>path);
